@@ -1,27 +1,30 @@
 package level1;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-class SetToArray {
-	public static void main(String args[]) {
-		
-	}
+class Solution {
     public int[] solution(int[] numbers) {
         int[] answer;
-        Set<Integer> numset = new HashSet<>();
-        int num = 0;
+        Arrays.sort(numbers);
         
-        for(int i : numbers){
-            for(int j : numbers){
-            	System.out.println(i+j);
-                numset.add(i+j);
+        Set<Integer> set = new HashSet();
+        
+        for(int x = 0; x < numbers.length-1; x++){
+            for(int y = x+1; y < numbers.length; y++){
+                set.add(numbers[x] + numbers[y]);
             }
         }
         
-        answer = new int[numset.size()];
-        numset.toArray();
+        answer = new int[set.size()];
+        int idx = 0;
+        for(int i : set){
+            answer[idx] = i;
+            idx++;
+        }
         
+        Arrays.sort(answer);
         return answer;
     }
 }
