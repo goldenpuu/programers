@@ -1,10 +1,10 @@
-package level1;
+package sungeun;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-class Solution {
+class EverySumOfArray {
     public int[] solution(int[] numbers) {
         int[] answer;
         Arrays.sort(numbers);
